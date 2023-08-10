@@ -130,9 +130,6 @@ set "uupConv=files\\uup-converter-wimlib.7z"
 set "aria2Script=files\\aria2_script.%random%.txt"
 set "destDir=UUPs"
 
-powershell -NoProfile -ExecutionPolicy Unrestricted .\\files\\depends_win.ps1 || (pause & exit /b 1)
-echo.
-
 if NOT EXIST ConvertConfig.ini goto :NO_FILE_ERROR
 if NOT EXIST %a7z% goto :NO_FILE_ERROR
 if NOT EXIST %uupConv% goto :NO_FILE_ERROR
@@ -224,13 +221,6 @@ fi
 
 destDir="UUPs"
 tempScript="aria2_script.\$RANDOM.txt"
-
-echo "Downloading converters..."
-aria2c --no-conf --log-level=info --log="aria2_download.log" -x16 -s16 -j5 --allow-overwrite=true --auto-file-renaming=false -d"files" -i"files/converter_multi"
-if [ $? != 0 ]; then
-  echo "We have encountered an error while downloading files."
-  exit 1
-fi
 
 echo ""
 echo "Retrieving aria2 script..."
@@ -343,8 +333,11 @@ CONFIG;
     $zip->addFromString('files/convert_config_linux', $convertConfigLinux);
     $zip->addFromString('files/convert_config_macos', $convertConfigLinux);
     $zip->addFile($currDir.'/public/autodl_files/readme.unix.md', 'readme.unix.md');
-    $zip->addFile($currDir.'/public/autodl_files/converter_multi', 'files/converter_multi');
-    $zip->addFile($currDir.'/public/autodl_files/depends_win.ps1', 'files/depends_win.ps1');
+    $zip->addFile($currDir.'/public/autodl_files/convert.sh', 'files/convert.sh');
+    $zip->addFile($currDir.'/public/autodl_files/convert_ve_plugin', 'files/convert_ve_plugin');
+    $zip->addFile($currDir.'/public/autodl_files/7zr.exe', 'files/7zr.exe');
+    $zip->addFile($currDir.'/public/autodl_files/aria2c.exe', 'files/aria2c.exe');
+    $zip->addFile($currDir.'/public/autodl_files/uup-converter-wimlib.7z', 'files/uup-converter-wimlib.7z');
     $zip->close();
 
     if($virtualEditions) {
@@ -436,8 +429,6 @@ set "aria2Script=files\\aria2_script.%random%.txt"
 set "destDir=UUPs"
 
 cd /d "%~dp0"
-powershell -NoProfile -ExecutionPolicy Unrestricted .\\files\\depends_win.ps1 -ForDownload || (pause & exit /b 1)
-echo.
 $downloadapp
 :DOWNLOAD_UUPS
 echo Retrieving aria2 script...
@@ -536,7 +527,7 @@ SCRIPT;
         $zip->addFromString('uup_download_linux.sh', $shellScript);
         $zip->addFromString('uup_download_macos.sh', $shellScript);
         $zip->addFile($currDir.'/public/autodl_files/readme.unix.md', 'readme.unix.md');
-        $zip->addFile($currDir.'/public/autodl_files/depends_win.ps1', 'files/depends_win.ps1');
+        $zip->addFile($currDir.'/public/autodl_files/aria2c.exe', 'files/aria2c.exe');
         $zip->close();
     } else {
         echo 'Failed to create archive.';
