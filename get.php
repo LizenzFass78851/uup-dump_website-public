@@ -294,6 +294,7 @@ DisableUpdatingUpgrade=0
 [Store_Apps]
 SkipApps     =0
 AppsLevel    =0
+StubAppsFull =0
 CustomList   =0
 
 [create_virtual_editions]
