@@ -111,7 +111,7 @@ $s['selectLangInfoText1'] = 'Apăsați pe butonul <i>Înainte</i> pentru a selec
 $s['selectLangInfoText2'] = 'WindowsUpdateBox.exe și Actualizări cumulative pot fi găsite în <i>Toate limbile</i>.';
 $s['allLangsWarn'] = 'Opțiunea <i>Toate limbile</i> nu are suport pentru selectarea ediției.';
 $s['clickNextToOpenFindFiles'] = 'Apăsați pe butonul <i>Înainte</i> pentru a deschide pagina unde puteți găsi fișierele.';
-$s['noLangsAvailable'] = 'Nu sunt limbi disponibile pentru această compilare.<br> Această compilare nu poate fi convertită într-o imagine ISO. <br> Consultați <a target=_blank href="https://github.com/uup-dump-dev/website-public/blob/master/FAQ.md"> Întrebări frecvente </a> pentru detalii.';
+$s['noLangsAvailable'] = 'Nu sunt limbi disponibile pentru această compilare.<br> Această compilare nu poate fi convertită într-o imagine ISO. <br> Consultați Întrebări frecvente pentru detalii.';
 $s['browseFiles'] = 'Răsfoiți fișierele';
 $s['browseFilesDesc'] = 'Răsfoiți rapid fișierele în compilarea selectată';
 $s['searchFiles'] = 'Caută fișiere';
@@ -194,8 +194,8 @@ $s['arm64Warning'] = 'Aceasta este o compilare <b>ARM64</b> care <b>nu este comp
 //Error messages
 $s['error_ERROR'] = 'Eroare generică.';
 $s['error_UNSUPPORTED_API'] = 'Versiunea de API instalată nu este compatibilă cu această versiune a UUP dump.';
-$s['error_NO_FILEINFO_DIR'] = 'Lipsește dosarul <i>fileinfo</i>.';
-$s['error_NO_BUILDS_IN_FILEINFO'] = 'Baza de date <i>fileinfo</i> nu conține nici o compilare.';
+$s['error_NO_FILEINFO_DIR'] = 'Lipsește dosarul fileinfo.';
+$s['error_NO_BUILDS_IN_FILEINFO'] = 'Baza de date fileinfo nu conține nici o compilare.';
 $s['error_SEARCH_NO_RESULTS'] = 'Nici un element găsit pentru interogarea efectuată.';
 $s['error_UNKNOWN_ARCH'] = 'Arhitectură procesor necunoscută.';
 $s['error_UNKNOWN_RING'] = 'Inel necunoscut.';

@@ -193,8 +193,8 @@ $s['arm64Warning'] = 'U hebt een ARM64-build geselecteerd die <b>alleen compatib
 //Error messages
 $s['error_ERROR'] = 'Generieke fout.';
 $s['error_UNSUPPORTED_API'] = 'Installed API version is not compatible with this version of UUP dump.';
-$s['error_NO_FILEINFO_DIR'] = 'De map <i>Bestands info</i> bestaat niet.';
-$s['error_NO_BUILDS_IN_FILEINFO'] = 'De <i>Bestands info</i> database bevat geen enkele build.';
+$s['error_NO_FILEINFO_DIR'] = 'De map Bestands info bestaat niet.';
+$s['error_NO_BUILDS_IN_FILEINFO'] = 'De Bestands info database bevat geen enkele build.';
 $s['error_SEARCH_NO_RESULTS'] = 'Geen items gevonden voor de uitgevoerde zoekopdracht.';
 $s['error_UNKNOWN_ARCH'] = 'Onbekende processor architectuur.';
 $s['error_UNKNOWN_RING'] = 'Onbekende ring.';

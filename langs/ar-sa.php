@@ -6,7 +6,7 @@ Translation information:
 English language name: Arabic (Saudi Arabia)
 Localized language name: العربية
 Language code: ar-SA
-Author: abbodi1406
+Authors: UUP dump authors and contributors
 */
 
 //Language information
@@ -55,6 +55,12 @@ $s['copyrightNew'] = '© %d UUP dump authors and contributors.';
 $s['selectLanguage'] = 'اختر لغة الموقع';
 $s['uupDumpDesc'] = 'Windows Update مثل إصدارات معاينة ويندوز مباشرة من UUP هذا الموقع يتيح تنزيل ملفات منصة التحديث الموحدة';
 $s['uupDumpDescSub'] = '%s on UUP dump. Windows Update هذا الموقع يتيح تنزيل ملفات منصة التحديث الموحدة مثل إصدارات معاينة ويندوز مباشرة من'; //Select language for Windows 11 Insider Preview 25188.1000 (rs_prerelease) amd64 on UUP dump. UUP dump lets you download Unified Update Platform files, like Windows Insider updates, directly from Windows Update.
+$s['themeButton'] = 'المظهر';
+$s['selectTheme'] = 'اختر سمة';
+$s['themeAuto'] = 'تلقائي';
+$s['themeLight'] = 'فاتح';
+$s['themeDark'] = 'داكن';
+$s['themeLegacy'] = 'كلاسيكي';
 
 //index.php
 $s['slogan'] = 'Windows Update تحميل إصدارات وتحديثات ويندوز بكل سهولة من سيرفرات';
@@ -79,10 +85,11 @@ $s['newlyAdded'] = 'الإصدارات المضافة حديثاً';
 $s['dateAdded'] = 'تاريخ الإضافة';
 $s['latestCanaryRelease'] = 'Canary أحدث إصدار من قناة';
 $s['latestCanaryReleaseSub'] = 'إصدارات قناة البناء الخام تقدم آخر التغيرات على نظام ويندوز مع ميزات غير مكتملة أو مستقرة كلياً<br>يناسب المستخدم ذو المستوى العالي من التقنية';
+$s['checkOutAddANewBuild'] = 'لم تعثر على الإصدار المرغوب؟ تفقد صفحة:   <i><a href="newbuild.php">اكتشاف الإصدارات</a></i>';
 
 //newbuild.php
-$s['newBuild'] = 'اكتشاف إصدارات';
-$s['addNewBuild'] = 'جلب إصدار جديد';
+$s['newBuild'] = 'اكتشاف الإصدارات';
+$s['addNewBuild'] = 'اكتشاف إصدار جديد';
 $s['selectOptions'] = 'حدد الخيارات';
 $s['newBuildNextText'] = 'اضغط على زر التالي لبدء البحث بالخيارات المحددة';
 $s['newBuildUsing'] = 'وظيفة هذه الصفحة';
@@ -118,7 +125,7 @@ $s['selectLangInfoText1'] = 'اضغط زر التالي لاختيار النس�
 $s['selectLangInfoText2'] = 'والتحديثات التراكمية يمكن إيجادها في خيار كل اللغات WindowsUpdateBox.exe';
 $s['allLangsWarn'] = 'خيار كل اللغات لا يوفر اختيار النسخة';
 $s['clickNextToOpenFindFiles'] = 'اضغط زر التالي لفتح صفحة إيجاد الملفات';
-$s['noLangsAvailable'] = 'لا توجد لغات متاحة<br>لا يمكن إنشاء ملف آيزو من هذا الإصدار<br>لمزيد من التفاصيل راجع <a target=_blank href="https://github.com/uup-dump/website/blob/master/FAQ.md">الأسئلة الشائعة</a>';
+$s['noLangsAvailable'] = 'لا توجد لغات متاحة<br>لا يمكن إنشاء ملف آيزو من هذا الإصدار<br>لمزيد من التفاصيل راجع الأسئلة الشائعة';
 $s['browseFiles'] = 'تصفح الملفات';
 $s['browseFilesDesc'] = 'عرض قائمة الملفات للتحميل يدوياً من الإصدار المحدد';
 $s['searchFiles'] = 'البحث في الملفات';
@@ -148,6 +155,7 @@ $s['aria2Opt2'] = 'ISO تنزيل وتحويل الملفات إلى ملف';
 $s['aria2Opt2Desc'] = 'ISO تحميل ملفات الإصدار المحدد وتحويلها، ثم صنع ملف';
 $s['aria2Opt3'] = 'ISO تنزيل وتحويل الملفات وإنشاء النسخ الإضافية وصنع ملف';
 $s['aria2Opt3Desc'] = 'ISO تحميل ملفات الإصدار المحدد وتحويلها، وإنشاء النسخ الإضافية، ثم صنع ملف';
+$s['aria2Opt4'] = 'تحميل الملف المضغوط للتحديثات فقط';
 $s['jsRequiredToConf'] = 'برمجة جافا سكريبت مطلوبة لتهيئة وتمكين هذا الخيار';
 $s['selAdditionalEditions'] = ':اختر النسخ الإضافية المرغوبة';
 $s['noAdditionalEditions'] = 'لا تتوفر نسخ إضافية متاحة حسب النسخ المختارة';
@@ -173,9 +181,8 @@ $s['legalCopeHarder'] = ':الضغط على زر -تحميل الملف المض
 $s['legalCope1'] = 'الآيزوهات المنشأة باستخدام سكريبتات الموقع مخصصة لغرض الاختبار والتقييم';
 $s['legalCope2'] = 'Microsoft Corporation وسائط التثبيت واستخداماتها غير مدعومة بأي شكل من شركة';
 $s['legalCope3v2'] = 'إدارة البرنامج غير مسؤولة عن أي أضرار قد تقع نتيجة الاستخدام السيء للموقع أو أدواته';
-$s['win1122h2OrLater'] = 'وما بعده Windows 11, version 22H2';
-$s['requiresWindows102004'] = 'سكريبت بقية أنظمة التشغيل سينشئ ملف آيزو غير مكتمل ، Windows 10 version 2004 لإنشاء ملف آيزو سليم لهذا الإصدار وما بعده، نظام التشغيل الحالي يجب أن يكون على الأقل';
-$s['aria2Opt4'] = 'تحميل الملف المضغوط للتحديثات فقط';
+$s['win1122h2OrLaterv2'] = 'ISO مطلوب نظام ويندوز لإنشاء';
+$s['requiresWindows102004v2'] = 'يجب استعمال نظام ويندوز حديث مثل ويندوز 10 نسخة 2004 على الأقل أو ويندوز 11 لإنشاء آيزو سليم. الأنظمة الأخرى لن تنفع';
 
 //get.php
 $s['listOfFilesFor'] = 'قائمة الملفات - %s'; //List of files for Windows 10 Insider Preview 18890.1000 (rs_prerelease) amd64
@@ -205,13 +212,12 @@ $s['sizeOfShownFiles'] = 'حجم الملفات: %s'; //Size of shown files: 2.8
 $s['error'] = 'خطأ';
 $s['requestNotSuccessful'] = 'فشل الطلب';
 $s['anErrorHasOccurred'] = 'حدث خطأ أثناء محاولة معالجة طلبك';
-$s['arm64Warning2022h'] = 'ARM64 إصدار خاص بمعالجات';
-$s['arm64Warning2022b'] = '<p>This build is only compatible with:</p><ul><li>Surface Pro X</li><li>Raspberry Pi</li><li>Apple Mac M1</li><li>other glorified mobile phones</li></ul><p>UUP dump authors <i>don\'t have a single one of these</i> and therefore <b>will provide absolutely no support</b>.</p>';
+$s['arm64Warning2023'] = 'مسؤولو الموقع لا يملكون أجهزة متوافقة معه وبالتالي لن يتم توفير أي دعم لمشاكل التثبيت .  <b><a href="https://support.microsoft.com/windows/477f51df-2e3b-f68f-31b0-06f5e4f8ebb5">ARM64</a> إصدار خاص بمعالجات</b>';
 
 //Error messages
 $s['error_ERROR'] = 'خطأ عام';
 $s['error_UNSUPPORTED_API'] = 'Installed API version is not compatible with this version of UUP dump.';
-$s['error_NO_FILEINFO_DIR'] = '<i>fileinfo</i> المجلد غير موجود';
+$s['error_NO_FILEINFO_DIR'] = 'fileinfo المجلد غير موجود';
 $s['error_NO_BUILDS_IN_FILEINFO'] = 'قاعدة بيانات الملفات لا تحتوي أي إصدار';
 $s['error_SEARCH_NO_RESULTS'] = 'لم يتم العثور على أي عنصر للبحث المطلوب';
 $s['error_UNKNOWN_ARCH'] = 'نواة معالج غير معروفة';
@@ -240,9 +246,11 @@ $s['error_RATE_LIMITED'] = 'تم تقييد وصولك، أعد المحاولة
 $s['error_UNSPECIFIED_VE'] = 'ISO لم تقم باختيار أي نسخة إضافية. إن كنت لا تريد إنشاء نسخة إضافية فاضغط خيار تنزيل وتحويل الملفات إلى ملف';
 $s['error_VE_UNAVAILABLE'] = 'النسخ الإضافية غير متوفرة مع هذا الاختيار';
 $s['error_INVALID_PAGE'] = 'الصفحة المحددة غير صحيحة';
+$s['error_WU_REQUEST_FAILED'] = 'فشل الطلب مع خدمة التحديثات';
 $s['errorNoMessage'] = 'رسالة الخطأ غير متاحة';
 
 //Languages
+$s['lang_neutral'] = 'خيار موحد';
 $s['lang_ar-sa'] = 'العربية';
 $s['lang_bg-bg'] = 'البلغارية';
 $s['lang_cs-cz'] = 'التشيكية';
@@ -285,10 +293,56 @@ $s['lang_zh-hk'] = 'الصينية - هونغ كونغ';
 $s['lang_zh-tw'] = 'الصينية التقليدية';
 
 //Channels
-$s['channel_msit'] = 'MSIT الذاتية';
 $s['channel_canary'] = 'Canary الخام';
 $s['channel_skipAhead'] = 'فئة التخطي';
 $s['channel_dev'] = 'Dev التطوير';
 $s['channel_beta'] = 'Beta التجريب';
 $s['channel_releasepreview'] = 'Preview المعاينة';
 $s['channel_retail'] = 'Retail عام';
+
+//Editions
+$s['edition_APP'] = 'تطبيقات المتجر الافتراضية';
+$s['edition_APP_MOMENT'] = 'تطبيقات المتجر الإضافية';
+$s['edition_FOD'] = 'الميزات الاختيارية';
+$s['edition_CLOUD'] = 'Windows S';
+$s['edition_CLOUDN'] = 'Windows S N';
+$s['edition_CLOUDE'] = 'Windows Lean';
+$s['edition_CLOUDEDITION'] = 'Windows SE';
+$s['edition_CLOUDEDITIONN'] = 'Windows SE N';
+$s['edition_CORE'] = 'Windows Home';
+$s['edition_CORECOUNTRYSPECIFIC'] = 'Windows Home China';
+$s['edition_COREN'] = 'Windows Home N';
+$s['edition_CORESINGLELANGUAGE'] = 'Windows Home Single Language';
+$s['edition_EDUCATION'] = 'Windows Education';
+$s['edition_EDUCATIONN'] = 'Windows Education N';
+$s['edition_ENTERPRISE'] = 'Windows Enterprise';
+$s['edition_ENTERPRISEEVAL'] = 'Windows Enterprise الاختبارية';
+$s['edition_ENTERPRISEN'] = 'Windows Enterprise N';
+$s['edition_ENTERPRISES'] = 'Windows Enterprise LTSC';
+$s['edition_ENTERPRISESEVAL'] = 'Windows Enterprise LTSC الاختبارية';
+$s['edition_ENTERPRISESN'] = 'Windows Enterprise N LTSC';
+$s['edition_ENTERPRISESNEVAL'] = 'Windows Enterprise N LTSC الاختبارية';
+$s['edition_HOLOGRAPHIC'] = 'Windows Holographic';
+$s['edition_IOTENTERPRISE'] = 'Windows IoT Enterprise';
+$s['edition_IOTENTERPRISEK'] = 'Windows IoT Enterprise مع اشتراك';
+$s['edition_IOTENTERPRISES'] = 'Windows IoT Enterprise LTSC';
+$s['edition_IOTENTERPRISESK'] = 'Windows IoT Enterprise LTSC مع اشتراك';
+$s['edition_LITE'] = 'Windows 10X';
+$s['edition_PPIPRO'] = 'Windows Team';
+$s['edition_PROFESSIONAL'] = 'Windows Pro';
+$s['edition_PROFESSIONALN'] = 'Windows Pro N';
+$s['edition_PROFESSIONALWORKSTATION'] = 'Windows Pro لمحطات العمل';
+$s['edition_PROFESSIONALWORKSTATIONN'] = 'Windows Pro N لمحطات العمل';
+$s['edition_PROFESSIONALEDUCATION'] = 'Windows Pro لعملاء التعليم';
+$s['edition_PROFESSIONALEDUCATIONN'] = 'Windows Pro N لعملاء التعليم';
+$s['edition_SERVERRDSH'] = 'Windows Enterprise متعدد الجلسات';
+$s['edition_SERVERARM64'] = 'Windows Server ARM64';
+$s['edition_SERVERAZURESTACKHCICOR'] = 'Azure Stack HCI';
+$s['edition_SERVERDATACENTER'] = 'Windows Server Datacenter';
+$s['edition_SERVERDATACENTERCORE'] = 'Windows Server Datacenter - بدون الواجهة الرسومية';
+$s['edition_SERVERSTANDARD'] = 'Windows Server Standard';
+$s['edition_SERVERSTANDARDCORE'] = 'Windows Server Standard - بدون الواجهة الرسومية';
+$s['edition_SERVERTURBINE'] = 'Windows Server Datacenter: Azure Edition';
+$s['edition_SERVERTURBINECOR'] = 'Windows Server Datacenter: Azure Edition - بدون الواجهة الرسومية';
+$s['edition_SERVERSTANDARDACOR'] = 'Windows Server Standard - القناة نصف السنوية';
+$s['edition_SERVERDATACENTERACOR'] = 'Windows Server Datacenter - القناة نصف السنوية';

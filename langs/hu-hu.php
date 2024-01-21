@@ -41,20 +41,26 @@ $s['requiredEdition'] = 'Kívánt kiadás';
 $s['unknown'] = 'Ismeretlen';
 
 //global
-$s['home'] = 'Kezdőlap';
-$s['downloads'] = 'Letöltések';
-$s['lightMode'] = 'Világos mód';
-$s['faq'] = 'GyIK';
-$s['darkMode'] = 'Sötét mód';
-$s['sourceCode'] = 'Forrás kód';
-$s['menu'] = 'Menü';
-$s['websiteDesc'] = 'Töltse le UUP fájlokat a Windows Update kiszolgálókról könnyedén. Ez a projekt nem áll kapcsolatban a Microsoft Corporation céggel.';
-$s['notAffiliated'] = 'Ez a projekt nem áll kapcsolatban a Microsoft Corporation céggel. A Windows a Microsoft Corporation bejegyzett védjegye.';
-$s['copyright'] = '© %d %s és közreműködők.'; //© 2019 whatever127 és közreműködők.
-$s['copyrightNew'] = '© %d UUP dump szerzők és közreműködők.';
-$s['selectLanguage'] = 'Kérjük, válassza ki a nyelvet';
-$s['uupDumpDesc'] = 'Az "UUP dump lehetővé teszi az Unified Update Platform fájlok, például a Windows Insider frissítések letöltését közvetlenül a Windows Update-ről.';
-$s['uupDumpDescSub'] = '%s az UUP dumpon. Az UUP dump segítségével közvetlenül a Windows Update-ről tölthet le Unified Update Platform fájlokat, például Windows Insider frissítéseket.'; //Select language for Windows 11 Insider Preview 25188.1000 (rs_prerelease) amd64 on UUP dump. Az UUP dump segítségével közvetlenül a Windows Update-ről tölthet le Unified Update Platform fájlokat, például Windows Insider frissítéseket..
+$s['home'] = 'Home';
+$s['downloads'] = 'Downloads';
+$s['lightMode'] = 'Light mode';
+$s['faq'] = 'FAQ';
+$s['darkMode'] = 'Dark mode';
+$s['sourceCode'] = 'Source code';
+$s['menu'] = 'Menu';
+$s['websiteDesc'] = 'Download UUP files from Windows Update servers with ease. This project is not affiliated with Microsoft Corporation.';
+$s['notAffiliated'] = 'This project is not affiliated with Microsoft Corporation. Windows is a registered trademark of Microsoft Corporation.';
+$s['copyright'] = '© %d %s and contributors.'; //© 2019 whatever127 and contributors.
+$s['copyrightNew'] = '© %d UUP dump authors and contributors.';
+$s['selectLanguage'] = 'Please select your language';
+$s['uupDumpDesc'] = 'UUP dump lets you download Unified Update Platform files, like Windows Insider updates, directly from Windows Update.';
+$s['uupDumpDescSub'] = '%s on UUP dump. UUP dump lets you download Unified Update Platform files, like Windows Insider updates, directly from Windows Update.'; //Select language for Windows 11 Insider Preview 25188.1000 (rs_prerelease) amd64 on UUP dump. UUP dump lets you download Unified Update Platform files, like Windows Insider updates, directly from Windows Update.
+$s['themeButton'] = 'Téma';
+$s['selectTheme'] = 'Téma kiválasztása';
+$s['themeAuto'] = 'Automatikus';
+$s['themeLight'] = 'Világos';
+$s['themeDark'] = 'Sötét';
+$s['themeLegacy'] = 'Rendszer';
 
 //index.php
 $s['slogan'] = 'Töltse le UUP fájlokat a Windows Update kiszolgálókról könnyedén.';
@@ -79,6 +85,7 @@ $s['newlyAdded'] = 'Nemrég hozzáadott összeállítások';
 $s['dateAdded'] = 'Hozzáadás dátuma';
 $s['latestCanaryRelease'] = 'Legújabb Canary Channel build';
 $s['latestCanaryReleaseSub'] = 'Kissé instabil buildek a legújabb platformváltozásokkal és korai funkciókkal.<br>Ideális a magasan képzett felhasználók számára.';
+$s['checkOutAddANewBuild'] = 'Nem találta meg a kívánt opciót? Nézze meg a(z) <i><a href="newbuild.php">Új build hozzáadása</a></i> oldalt.';
 
 //newbuild.php
 $s['newBuild'] = 'Új build';
@@ -97,7 +104,7 @@ $s['weFoundBuilds'] = 'A lekérdezés során <b>%d</b> építményeket találtuk
 $s['sortByDate'] = 'Az eredmények rendezése a hozzáadás dátuma szerint';
 $s['nextPage'] = 'Következő';
 $s['prevPage'] = 'Előző';
-$s['pageOf'] = '%d oldal %d-ből %d'; //1. oldal a 48-ból
+$s['pageOf'] = '%d oldal %d-ből'; //1. oldal a 48-ból
 
 //fetchupd.php
 $s['responseFromServer'] = 'Kiszolgáló válasza';
@@ -148,6 +155,7 @@ $s['aria2Opt2'] = 'Letöltés az "aria2" használatával és konvertálás';
 $s['aria2Opt2Desc'] = 'Könnyen letöltheti a kiválasztott UUP csomagot az aria2 használatával, és konvertálhatja ISO fájlba.';
 $s['aria2Opt3'] = 'Töltse le az aria2 használatával, konvertálja és adjon hozzá további kiadásokat';
 $s['aria2Opt3Desc'] = 'Könnyen letöltheti a kiválasztott UUP csomagot az aria2 használatával, konvertálhat, adhat hozzá további kiadásokat és végül létrehozhat ISO lemezkép-fájlt.';
+$s['aria2Opt4'] = 'Letöltési csomag létrehozása ezekhez a frissítésekhez';
 $s['jsRequiredToConf'] = 'Ennek az opciónak a konfigurálásához és használatához JavaScript szükséges.';
 $s['selAdditionalEditions'] = 'Válasszon további kiadásokat';
 $s['noAdditionalEditions'] = 'Ehhez a kiválasztáshoz nem állnak rendelkezésre további kiadások.';
@@ -204,14 +212,13 @@ $s['sizeOfShownFiles'] = 'A megjelenített fájlok mérete: %s'; //Megjelenítet
 $s['error'] = 'Hiba';
 $s['requestNotSuccessful'] = 'A kérelem nem sikerült';
 $s['anErrorHasOccurred'] = 'Hiba történt a kérés feldolgozása közben.';
-$s['arm64Warning2022h'] = 'Ez egy ARM64 build';
-$s['arm64Warning2022b'] = '<p>Ez a build csak a következőkkel kompatibilis:</p><ul><li>Surface Pro X</li><li>Raspberry Pi</li><li>Apple Mac M1</li><li>más dicsőített mobiltelefonok</li></ul><p>UUP dump szerzők <i>nem rendelkeznek ezek közül egyikkel sem</i> és ezért <b>nem nyújtanak semmiféle támogatást.</b>.</p>';
+$s['arm64Warning2023'] = '<b>Ez egy <a href="https://support.microsoft.com/en-us/windows/477f51df-2e3b-f68f-31b0-06f5e4f8ebb5">ARM64</a> build.</b> Az UUP dump szerzőknek nincs egyetlen vele kompatibilis eszközük sem, ezért <b>nem nyújtanak semmilyen támogatást</b>.';
 
 //Error messages
 $s['error_ERROR'] = 'Általános hiba.';
 $s['error_UNSUPPORTED_API'] = 'A telepített API verziója nem kompatibilis az UUP dump ezen verziójával.';
-$s['error_NO_FILEINFO_DIR'] = 'A <i>fileinfo</i> könyvtár nem létezik.';
-$s['error_NO_BUILDS_IN_FILEINFO'] = 'A <i>fileinfo</i> adatbázis nem tartalmaz építményt.';
+$s['error_NO_FILEINFO_DIR'] = 'A fileinfo könyvtár nem létezik.';
+$s['error_NO_BUILDS_IN_FILEINFO'] = 'A fileinfo adatbázis nem tartalmaz építményt.';
 $s['error_SEARCH_NO_RESULTS'] = 'Nem található elem a végrehajtott lekérdezéshez.';
 $s['error_UNKNOWN_ARCH'] = 'Ismeretlen processzor-architektúra.';
 $s['error_UNKNOWN_RING'] = 'Ismeretlen gyűrű.';
@@ -239,9 +246,11 @@ $s['error_RATE_LIMITED'] = 'Ön elérte a letöltési határt, ezért korlátozv
 $s['error_UNSPECIFIED_VE'] = 'You have not selected any additional editions. If do not wish to create additional editions, please use the <i>Download using aria2 and convert</i> option.';
 $s['error_VE_UNAVAILABLE'] = 'További kiadások nem támogatottak ennél a kiválasztásnál.';
 $s['error_INVALID_PAGE'] = 'A megadott oldal érvénytelen';
+$s['error_WU_REQUEST_FAILED'] = 'A Windows Update szolgáltatáshoz intézett kérés sikertelen volt.';
 $s['errorNoMessage'] = 'Hibaüzenet nem elérhető.';
 
 //Languages
+$s['lang_neutral'] = 'Nyelvek';
 $s['lang_ar-sa'] = 'Arabic (Saudi Arabia)';
 $s['lang_bg-bg'] = 'Bulgarian';
 $s['lang_cs-cz'] = 'Czech';
@@ -290,3 +299,50 @@ $s['channel_dev'] = 'Dev Csatorna';
 $s['channel_beta'] = 'Beta Csatorna';
 $s['channel_releasepreview'] = 'Release Preview Csatorna';
 $s['channel_retail'] = 'Kiskereskedelmi';
+
+//Editions
+$s['edition_APP'] = 'Microsoft Store Bejövő alkalmazások';
+$s['edition_APP_MOMENT'] = 'Microsoft Store Jelenlegi alkalmazások';
+$s['edition_FOD'] = 'Igény szerinti funkciók (Lehetőségek)';
+$s['edition_CLOUD'] = 'Windows S';
+$s['edition_CLOUDN'] = 'Windows S N';
+$s['edition_CLOUDE'] = 'Windows Lean';
+$s['edition_CLOUDEDITION'] = 'Windows SE';
+$s['edition_CLOUDEDITIONN'] = 'Windows SE N';
+$s['edition_CORE'] = 'Windows Home';
+$s['edition_CORECOUNTRYSPECIFIC'] = 'Windows Home China';
+$s['edition_COREN'] = 'Windows Home N';
+$s['edition_CORESINGLELANGUAGE'] = 'Windows Home Single Language';
+$s['edition_EDUCATION'] = 'Windows Education';
+$s['edition_EDUCATIONN'] = 'Windows Education N';
+$s['edition_ENTERPRISE'] = 'Windows Enterprise';
+$s['edition_ENTERPRISEEVAL'] = 'Windows Enterprise Evaluation';
+$s['edition_ENTERPRISEN'] = 'Windows Enterprise N';
+$s['edition_ENTERPRISES'] = 'Windows Enterprise LTSC';
+$s['edition_ENTERPRISESEVAL'] = 'Windows Enterprise LTSC Evaluation';
+$s['edition_ENTERPRISESN'] = 'Windows Enterprise N LTSC';
+$s['edition_ENTERPRISESNEVAL'] = 'Windows Enterprise N LTSC Evaluation';
+$s['edition_HOLOGRAPHIC'] = 'Windows Holographic';
+$s['edition_IOTENTERPRISE'] = 'Windows IoT Enterprise';
+$s['edition_IOTENTERPRISEK'] = 'Windows IoT Enterprise Subscription';
+$s['edition_IOTENTERPRISES'] = 'Windows IoT Enterprise LTSC';
+$s['edition_IOTENTERPRISESK'] = 'Windows IoT Enterprise LTSC Subscription';
+$s['edition_LITE'] = 'Windows 10X';
+$s['edition_PPIPRO'] = 'Windows Team';
+$s['edition_PROFESSIONAL'] = 'Windows Pro';
+$s['edition_PROFESSIONALN'] = 'Windows Pro N';
+$s['edition_PROFESSIONALWORKSTATION'] = 'Windows Pro for Workstations';
+$s['edition_PROFESSIONALWORKSTATIONN'] = 'Windows Pro N for Workstations';
+$s['edition_PROFESSIONALEDUCATION'] = 'Windows Pro Education';
+$s['edition_PROFESSIONALEDUCATIONN'] = 'Windows Pro Education N';
+$s['edition_SERVERRDSH'] = 'Windows Enterprise multi-session / Virtual Desktops';
+$s['edition_SERVERARM64'] = 'Windows Server ARM64';
+$s['edition_SERVERAZURESTACKHCICOR'] = 'Azure Stack HCI';
+$s['edition_SERVERDATACENTER'] = 'Windows Server Datacenter';
+$s['edition_SERVERDATACENTERCORE'] = 'Windows Server Datacenter (Core)';
+$s['edition_SERVERSTANDARD'] = 'Windows Server Standard';
+$s['edition_SERVERSTANDARDCORE'] = 'Windows Server Standard (Core)';
+$s['edition_SERVERTURBINE'] = 'Windows Server Datacenter: Azure Edition';
+$s['edition_SERVERTURBINECOR'] = 'Windows Server Datacenter: Azure Edition (Core)';
+$s['edition_SERVERSTANDARDACOR'] = 'Windows Server Standard (Semi-Annual Channel)';
+$s['edition_SERVERDATACENTERACOR'] = 'Windows Server Datacenter (Semi-Annual Channel)';

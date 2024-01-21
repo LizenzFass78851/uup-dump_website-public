@@ -298,6 +298,7 @@ StubAppsFull =0
 CustomList   =0
 
 [create_virtual_editions]
+vUseDism     =1
 vAutoStart   =1
 vDeleteSource=0
 vPreserve    =0

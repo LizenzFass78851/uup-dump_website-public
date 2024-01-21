@@ -195,8 +195,8 @@ $s['arm64Warning'] = 'Hai selezionato un build ARM64 che è <b>compatibile SOLO 
 //Error messages
 $s['error_ERROR'] = 'Errore generico.';
 $s['error_UNSUPPORTED_API'] = 'La versione API installata non è compatibile con questa versione di dump UUP.';
-$s['error_NO_FILEINFO_DIR'] = 'La cartella <i>fileinfo</i> non esiste.';
-$s['error_NO_BUILDS_IN_FILEINFO'] = 'Il database <i>fileinfo</i> non contiene nessuna build.';
+$s['error_NO_FILEINFO_DIR'] = 'La cartella fileinfo non esiste.';
+$s['error_NO_BUILDS_IN_FILEINFO'] = 'Il database fileinfo non contiene nessuna build.';
 $s['error_SEARCH_NO_RESULTS'] = 'Nessun elemento trovato per la query eseguita.';
 $s['error_UNKNOWN_ARCH'] = 'Architettura del processore sconosciuta.';
 $s['error_UNKNOWN_RING'] = 'Anello sconosciuto.';

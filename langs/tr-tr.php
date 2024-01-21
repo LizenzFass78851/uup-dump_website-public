@@ -182,8 +182,8 @@ $s['arm64Warning'] = '<b>Yalnızca ARM64 tabanlı cihazlarla uyumlu</b> ve norma
 //Error messages
 $s['error_ERROR'] = 'Genel hata.';
 $s['error_UNSUPPORTED_API'] = 'Yüklü API sürümü, bu UUP yığını sürümüyle uyumlu değil.';
-$s['error_NO_FILEINFO_DIR'] = '<i>fileinfo</i> dizini mevcut değil.';
-$s['error_NO_BUILDS_IN_FILEINFO'] = '<i>fileinfo</i> veritabanı herhangi bir yapı içermiyor.';
+$s['error_NO_FILEINFO_DIR'] = 'fileinfo dizini mevcut değil.';
+$s['error_NO_BUILDS_IN_FILEINFO'] = 'fileinfo veritabanı herhangi bir yapı içermiyor.';
 $s['error_SEARCH_NO_RESULTS'] = 'Gerçekleştirilen sorgu için hiçbir öğe bulunamadı.';
 $s['error_UNKNOWN_ARCH'] = 'Bilinmeyen işlemci mimarisi.';
 $s['error_UNKNOWN_RING'] = 'Bilinmeyen halka.';

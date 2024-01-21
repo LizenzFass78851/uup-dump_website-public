@@ -173,8 +173,8 @@ $s['arm64Warning'] = 'Vous avez sélectionné une version ARM64 compatible <b>un
 //Error messages
 $s['error_ERROR'] = 'Erreur générique.';
 $s['error_UNSUPPORTED_API'] = 'La construction de l\'API installée n\'est pas compatible avec cette construction du vidage UUP.';
-$s['error_NO_FILEINFO_DIR'] = 'Le répertoire <i>info fichier</i> n’existe pas.';
-$s['error_NO_BUILDS_IN_FILEINFO'] = 'La base de données <i>info fichier</i> ne contient aucune construction.';
+$s['error_NO_FILEINFO_DIR'] = 'Le répertoire info fichier n’existe pas.';
+$s['error_NO_BUILDS_IN_FILEINFO'] = 'La base de données info fichier ne contient aucune construction.';
 $s['error_SEARCH_NO_RESULTS'] = 'Aucun élément trouvé pour la requête effectuée.';
 $s['error_UNKNOWN_ARCH'] = 'Architecture de processeur inconnue.';
 $s['error_UNKNOWN_RING'] = 'Anneau inconnue.';

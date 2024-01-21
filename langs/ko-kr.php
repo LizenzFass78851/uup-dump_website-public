@@ -110,7 +110,7 @@ $s['selectLangInfoText1'] = '<i>다음</i> 버튼을 클릭하여 다운로드 �
 $s['selectLangInfoText2'] = 'WindowsUpdateBox.exe 및 누적 업데이트는 <i>전체 언어</i>에서 찾을 수 있습니다.';
 $s['allLangsWarn'] = '<i>전체 언어</i> 옵션은 에디션 선택을 지원하지 않습니다.';
 $s['clickNextToOpenFindFiles'] = '<i>다음</i> 버튼을 클릭하면 파일을 찾을 수 있는 페이지가 열립니다.';
-$s['noLangsAvailable'] = '이 빌드에는 사용할 수 있는 언어가 없습니다.<br>이 빌드는 ISO로 변환 할 수 없습니다.<br><a target=_blank href="https://github.com/uup-dump-dev/website-public/blob/master/FAQ.md">FAQ</a>를 참고하여 주십시오.';
+$s['noLangsAvailable'] = '이 빌드에는 사용할 수 있는 언어가 없습니다.<br>이 빌드는 ISO로 변환 할 수 없습니다.<br>FAQ를 참고하여 주십시오.';
 $s['browseFiles'] = '파일 찾아보기';
 $s['browseFilesDesc'] = '선택한 빌드에서 빠르게 파일 찾아보기';
 $s['searchFiles'] = '파일 검색';
@@ -193,8 +193,8 @@ $s['arm64Warning'] = '<b>일반 Intel/AMD 프로세서와 호환되지 않는 AR
 //Error messages
 $s['error_ERROR'] = '일반적인 오류.';
 $s['error_UNSUPPORTED_API'] = '설치된 API 버전은 이 버전의 UUP dump와 호환되지 않습니다.';
-$s['error_NO_FILEINFO_DIR'] = '<i>fileinfo</i> 디렉토리가 존재하지 않습니다.';
-$s['error_NO_BUILDS_IN_FILEINFO'] = '<i>fileinfo</i> 데이터베이스에는 빌드가 포함되어 있지 않습니다.';
+$s['error_NO_FILEINFO_DIR'] = 'fileinfo 디렉토리가 존재하지 않습니다.';
+$s['error_NO_BUILDS_IN_FILEINFO'] = 'fileinfo 데이터베이스에는 빌드가 포함되어 있지 않습니다.';
 $s['error_SEARCH_NO_RESULTS'] = '수행 된 쿼리에 대한 항목을 찾을 수 없습니다.';
 $s['error_UNKNOWN_ARCH'] = '알 수 없는 프로세서 아키텍처.';
 $s['error_UNKNOWN_RING'] = '알 수 없는 채널';
