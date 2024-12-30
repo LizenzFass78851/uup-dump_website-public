@@ -1,5 +1,5 @@
 #!/bin/bash
-scriptName="UUP Converter v0.7.2"
+scriptName="UUP Converter v0.7.3"
 UUP_CONVERTER_SCRIPT=1
 
 export PATH=${PATH}:/usr/sbin
@@ -51,7 +51,9 @@ enterprisesneval
 holographic
 hubos
 iotenterprise
+iotenterprisek
 iotenterprises
+iotenterprisesk
 iotos
 iotuap
 lite
@@ -117,7 +119,8 @@ serverturbinecor
 serverweb
 serverwebcore
 starter
-startern'
+startern
+wnc'
 
 bootSourcesList='sources/alert.gif
 sources/api-ms-win-core-apiquery-l1-1-0.dll
@@ -231,11 +234,21 @@ sources/WinDlp.dll
 sources/winsetup.dll
 sources/wpx.dll
 sources/xmllite.dll
+sources/deployprovider.dll
+sources/osimageprovider.dll
+sources/pnppropmig.dll
+sources/UnattendMgr.dll
+sources/UpdateCompression.dll
+sources/WinSetupBoot.hiv
+sources/WinSetupBoot.sys
+sources/WinSetupMon.hiv
+sources/WinSetupMon.sys
 sources/..-.*/appraiser.dll.mui
 sources/..-.*/arunres.dll.mui
 sources/..-.*/cmisetup.dll.mui
 sources/..-.*/compatctrl.dll.mui
 sources/..-.*/compatprovider.dll.mui
+sources/..-.*/deployprovider.dll.mui
 sources/..-.*/dism.exe.mui
 sources/..-.*/dismapi.dll.mui
 sources/..-.*/dismcore.dll.mui
@@ -246,6 +259,7 @@ sources/..-.*/input.dll.mui
 sources/..-.*/logprovider.dll.mui
 sources/..-.*/MediaSetupUIMgr.dll.mui
 sources/..-.*/nlsbres.dll.mui
+sources/..-.*/osimageprovider.dll.mui
 sources/..-.*/pnpibs.dll.mui
 sources/..-.*/reagent.adml
 sources/..-.*/reagent.dll.mui
@@ -573,13 +587,24 @@ for metadata in $metadataFiles; do
   if [ "$currentType" == "Server Core" ] && [ "$currentEdition" == "ServerDatacenter" ]; then
     currentEdition="ServerDatacenterCore"
   fi
+  if [ "$currentType" == "Server Core" ] && [ "$currentEdition" == "ServerTurbine" ]; then
+    currentEdition="ServerTurbineCore"
+  fi
+
+  serverYear="2022"
+  if echo $currentName | grep -ow "2025" >/dev/null; then
+    serverYear="2025"
+  fi
+  if echo $currentName | grep -ow "2028" >/dev/null; then
+    serverYear="2028"
+  fi
 
   editionName="Windows 10 $currentEdition"
   if echo $currentName | grep -ow "Windows 11" >/dev/null; then
     editionName="Windows 11 $currentEdition"
   fi
   if echo $currentEdition | grep -i "^Server" >/dev/null; then
-    editionName="Windows Server 2022 $currentEdition"
+    editionName="Windows Server $serverYear $currentEdition"
   fi
 
   echo -e "$infoColor""Exporting $editionName to install.$type...""$resetColor"
