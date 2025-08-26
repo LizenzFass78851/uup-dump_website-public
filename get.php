@@ -283,6 +283,7 @@ wim2swm      =0
 SkipISO      =0
 SkipWinRE    =0
 LCUwinre     =0
+LCUmsuExpand =0
 UpdtBootFiles=0
 ForceDism    =0
 RefESD       =0
@@ -308,6 +309,7 @@ vwim2esd     =$esd
 vwim2swm     =0
 vSkipISO     =0
 vAutoEditions=$desiredVirtualEditions
+vSortEditions=
 
 CONFIG;
 
