@@ -41,19 +41,20 @@ function createUupConvertPackage(
 
     $type = $esd ? 'esd' : 'wim';
 
+    $winUrl = str_replace("%", "%%", $url);
+
     $currDir = dirname(__FILE__).'/..';
     $time = gmdate("Y-m-d H:i:s T", time());
-
-    $sha1 = $url.'&sha1=1';
 
     $downloadapp = "";
     if(!empty($app)) {
         $downloadapp = <<<TEXT
 
 :DOWNLOAD_APPS
-echo Retrieving aria2 script for Apps...
-"%aria2%" --no-conf --console-log-level=warn --log-level=info --log="aria2_download.log" -o"%aria2Script%" --allow-overwrite=true --auto-file-renaming=false "$app"
+echo Retrieving aria2 script for Microsoft Store Apps...
+"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -o"%aria2Script%" --allow-overwrite=true --auto-file-renaming=false "$app"
 if %ERRORLEVEL% GTR 0 call :DOWNLOAD_ERROR & exit /b 1
+echo.
 
 for /F "tokens=2 delims=:" %%i in ('findstr #UUPDUMP_ERROR: "%aria2Script%"') do set DETECTED_ERROR=%%i
 if NOT [%DETECTED_ERROR%] == [] (
@@ -64,16 +65,17 @@ if NOT [%DETECTED_ERROR%] == [] (
     goto :EOF
 )
 
-echo Attempting to download Apps files...
-"%aria2%" --no-conf --console-log-level=warn --log-level=info --log="aria2_download.log" -x16 -s16 -j25 -c -R -d"%destDir%" -i"%aria2Script%"
+echo Downloading Microsoft Store Apps...
+"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -x16 -s16 -j25 -c -R -d"%destDir%" -i"%aria2Script%"
 if %ERRORLEVEL% GTR 0 goto :DOWNLOAD_APPS
+echo.
 
 TEXT;
     }
 
     $cmdScript = <<<SCRIPT
 @echo off
-rem Generated on $time
+:: Generated on $time
 
 :: Proxy configuration
 :: If you need to configure a proxy to be able to connect to the internet,
@@ -126,6 +128,8 @@ SETLOCAL DISABLEDELAYEDEXPANSION
 goto :EOF
 
 :START_PROCESS
+title {$archiveName} download
+
 set "aria2=files\\aria2c.exe"
 set "a7z=files\\7zr.exe"
 set "uupConv=files\\uup-converter-wimlib.7z"
@@ -133,17 +137,17 @@ set "aria2Script=files\\aria2_script.%random%.txt"
 set "destDir=UUPs"
 
 if NOT EXIST ConvertConfig.ini goto :NO_FILE_ERROR
+if NOT EXIST CustomAppsList.txt goto :NO_FILE_ERROR
 if NOT EXIST %a7z% goto :NO_FILE_ERROR
 if NOT EXIST %uupConv% goto :NO_FILE_ERROR
 
 echo Extracting UUP converter...
-if NOT EXIST CustomAppsList.txt "%a7z%" -x!ConvertConfig.ini -y x "%uupConv%" >NUL
-if EXIST CustomAppsList.txt "%a7z%" -x!ConvertConfig.ini -x!CustomAppsList.txt -y x "%uupConv%" >NUL
+"%a7z%" -x!ConvertConfig.ini -x!CustomAppsList.txt -y x "%uupConv%" >NUL
 echo.
 $downloadapp
 :DOWNLOAD_UUPS
-echo Retrieving aria2 script...
-"%aria2%" --no-conf --console-log-level=warn --log-level=info --log="aria2_download.log" -o"%aria2Script%" --allow-overwrite=true --auto-file-renaming=false "$url"
+echo Retrieving aria2 script for the UUP set...
+"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -o"%aria2Script%" --allow-overwrite=true --auto-file-renaming=false "$winUrl"
 if %ERRORLEVEL% GTR 0 call :DOWNLOAD_ERROR & exit /b 1
 echo.
 
@@ -156,10 +160,9 @@ if NOT [%DETECTED_ERROR%] == [] (
     goto :EOF
 )
 
-echo Attempting to download files...
-"%aria2%" --no-conf --console-log-level=warn --log-level=info --log="aria2_download.log" -x16 -s16 -j5 -c -R -d"%destDir%" -i"%aria2Script%"
+echo Downloading the UUP set...
+"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -x16 -s16 -j5 -c -R -d"%destDir%" -i"%aria2Script%"
 if %ERRORLEVEL% GTR 0 goto :DOWNLOAD_UUPS & exit /b 1
-"%aria2%" --no-conf --console-log-level=warn --log-level=info --log="aria2_download.log" --allow-overwrite=true --auto-file-renaming=false -d"%destDir%" "$sha1"
 
 if EXIST convert-UUP.cmd goto :START_CONVERT
 pause
@@ -226,7 +229,7 @@ destDir="UUPs"
 tempScript="aria2_script.\$RANDOM.txt"
 
 echo ""
-echo "Retrieving aria2 script..."
+echo "Retrieving aria2 script for the UUP set..."
 aria2c --no-conf --console-log-level=warn --log-level=info --log="aria2_download.log" -o"\$tempScript" --allow-overwrite=true --auto-file-renaming=false "$url"
 if [ $? != 0 ]; then
   echo "Failed to retrieve aria2 script"
@@ -241,7 +244,7 @@ if [ ! -z \$detectedError ]; then
 fi
 
 echo ""
-echo "Attempting to download files..."
+echo "Downloading the UUP set..."
 aria2c --no-conf --console-log-level=warn --log-level=info --log="aria2_download.log" -x16 -s16 -j5 -c -R -d"\$destDir" -i"\$tempScript"
 if [ $? != 0 ]; then
   echo "We have encountered an error while downloading files."
@@ -347,6 +350,7 @@ CONFIG;
     $zip->addFile($currDir.'/public/autodl_files/7zr.exe', 'files/7zr.exe');
     $zip->addFile($currDir.'/public/autodl_files/aria2c.exe', 'files/aria2c.exe');
     $zip->addFile($currDir.'/public/autodl_files/uup-converter-wimlib.7z', 'files/uup-converter-wimlib.7z');
+    $zip->addFile($currDir.'/public/autodl_files/CustomAppsList.txt', 'CustomAppsList.txt');
     $zip->close();
 
     if($virtualEditions) {
@@ -367,11 +371,13 @@ CONFIG;
 
 //Create aria2 download package only
 function createAria2Package($url, $archiveName, $app = null) {
+    $winUrl = str_replace("%", "%%", $url);
+
     $currDir = dirname(__FILE__).'/..';
     $time = gmdate("Y-m-d H:i:s T", time());
 
     $ariacmd = <<<TEXT
-"%aria2%" --no-conf --console-log-level=warn --log-level=info --log="aria2_download.log" -x16 -s16 -j5 -c -R -d"%destDir%" -i"%aria2Script%"
+"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -x16 -s16 -j5 -c -R -d"%destDir%" -i"%aria2Script%"
 TEXT;
 
     $ariabash = <<<TEXT
@@ -380,7 +386,7 @@ TEXT;
 
     if(strpos($archiveName, "_app")) {
         $ariacmd = <<<TEXT
-"%aria2%" --no-conf --console-log-level=warn --log-level=info --log="aria2_download.log" -x16 -s16 -j25 -c -R -d"%destDir%" -i"%aria2Script%"
+"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -x16 -s16 -j25 -c -R -d"%destDir%" -i"%aria2Script%"
 TEXT;
 
         $ariabash = <<<TEXT
@@ -388,16 +394,15 @@ aria2c --no-conf --console-log-level=warn --log-level=info --log="aria2_download
 TEXT;
     }
 
-    $sha1 = $url.'&sha1=1';
-
     $downloadapp = "";
     if(!empty($app)) {
         $downloadapp = <<<TEXT
 
 :DOWNLOAD_APPS
-echo Retrieving aria2 script for Apps...
-"%aria2%" --no-conf --console-log-level=warn --log-level=info --log="aria2_download.log" -o"%aria2Script%" --allow-overwrite=true --auto-file-renaming=false "$app"
+echo Retrieving aria2 script for Microsoft Store Apps...
+"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -o"%aria2Script%" --allow-overwrite=true --auto-file-renaming=false "$app"
 if %ERRORLEVEL% GTR 0 call :DOWNLOAD_ERROR & exit /b 1
+echo.
 
 for /F "tokens=2 delims=:" %%i in ('findstr #UUPDUMP_ERROR: "%aria2Script%"') do set DETECTED_ERROR=%%i
 if NOT [%DETECTED_ERROR%] == [] (
@@ -408,16 +413,17 @@ if NOT [%DETECTED_ERROR%] == [] (
     goto :EOF
 )
 
-echo Attempting to download Apps files...
-"%aria2%" --no-conf --console-log-level=warn --log-level=info --log="aria2_download.log" -x16 -s16 -j25 -c -R -d"%destDir%" -i"%aria2Script%"
+echo Downloading Microsoft Store Apps...
+"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -x16 -s16 -j25 -c -R -d"%destDir%" -i"%aria2Script%"
 if %ERRORLEVEL% GTR 0 goto :DOWNLOAD_APPS
+echo.
 
 TEXT;
     }
 
     $cmdScript = <<<SCRIPT
 @echo off
-rem Generated on $time
+:: Generated on $time
 
 :: Proxy configuration
 :: If you need to configure a proxy to be able to connect to the internet,
@@ -435,6 +441,8 @@ set "all_proxy="
 
 :: End of proxy configuration
 
+title {$archiveName} download
+
 set "aria2=files\\aria2c.exe"
 set "aria2Script=files\\aria2_script.%random%.txt"
 set "destDir=UUPs"
@@ -442,9 +450,10 @@ set "destDir=UUPs"
 cd /d "%~dp0"
 $downloadapp
 :DOWNLOAD_UUPS
-echo Retrieving aria2 script...
-"%aria2%" --no-conf --console-log-level=warn --log-level=info --log="aria2_download.log" -o"%aria2Script%" --allow-overwrite=true --auto-file-renaming=false "$url"
+echo Retrieving aria2 script for the UUP set...
+"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -o"%aria2Script%" --allow-overwrite=true --auto-file-renaming=false "$winUrl"
 if %ERRORLEVEL% GTR 0 call :DOWNLOAD_ERROR & exit /b 1
+echo.
 
 for /F "tokens=2 delims=:" %%i in ('findstr #UUPDUMP_ERROR: "%aria2Script%"') do set DETECTED_ERROR=%%i
 if NOT [%DETECTED_ERROR%] == [] (
@@ -455,10 +464,9 @@ if NOT [%DETECTED_ERROR%] == [] (
     goto :EOF
 )
 
-echo Attempting to download files...
+echo Downloading the UUP set...
 $ariacmd
 if %ERRORLEVEL% GTR 0 goto :DOWNLOAD_UUPS & exit /b 1
-"%aria2%" --no-conf --console-log-level=warn --log-level=info --log="aria2_download.log" --allow-overwrite=true --auto-file-renaming=false -d"%destDir%" "$sha1"
 
 pause
 goto EOF
@@ -502,7 +510,7 @@ which aria2c &>/dev/null || {
 destDir="UUPs"
 tempScript="aria2_script.\$RANDOM.txt"
 
-echo "Retrieving aria2 script..."
+echo "Retrieving aria2 script for the UUP set..."
 aria2c --no-conf --console-log-level=warn --log-level=info --log="aria2_download.log" -o"\$tempScript" --allow-overwrite=true --auto-file-renaming=false "$url"
 if [ $? != 0 ]; then
   echo "Failed to retrieve aria2 script"
@@ -517,7 +525,7 @@ if [ ! -z \$detectedError ]; then
 fi
 
 echo ""
-echo "Attempting to download files..."
+echo "Downloading the UUP set..."
 $ariabash
 if [ $? != 0 ]; then
   echo "We have encountered an error while downloading files."
