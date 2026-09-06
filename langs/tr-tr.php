@@ -53,6 +53,7 @@ $s['copyright'] = '© %d %s ve katkıda bulunanlar.'; //© 2019 whatever127 and 
 $s['selectLanguage'] = 'Lütfen dilinizi seçin';
 
 //index.php
+$s['maintenanceNotice'] = 'Planlı bakım: %1$s – %2$s'; //Planned maintenance: Sep 9, 2026, 8:00 PM – Sep 10, 2026, 12:00 AM
 $s['slogan'] = 'UUP dosyalarını Windows Update sunucularından kolaylıkla indirin.';
 $s['advOptions'] = 'Gelişmiş seçenekler';
 $s['browseBuilds'] = 'Bilinen Derlemelerin listesine göz atın';

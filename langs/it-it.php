@@ -54,6 +54,7 @@ $s['copyright'] = '© %d %s e collaboratori.'; //© 2019 whatever127 e collabora
 $s['selectLanguage'] = 'Seleziona la tua lingua';
 
 //index.php
+$s['maintenanceNotice'] = 'Manutenzione programmata: %1$s – %2$s'; //Planned maintenance: Sep 9, 2026, 8:00 PM – Sep 10, 2026, 12:00 AM
 $s['slogan'] = 'Scarica facilmente i file UUP dai server Windows Update.';
 $s['quickOptions'] = 'Opzioni veloce';
 $s['tHeadReleaseType'] = 'Tipo di Release';
@@ -62,11 +63,11 @@ $s['tHeadArchitectures'] = 'Architetture';
 $s['latestPublicRelease'] = 'Ultima build Release Pubblica';
 $s['latestPublicReleaseSub'] = 'Ultima build aggiornata per utenti regolari.';
 $s['latestDevRelease'] = 'Ultima build Canale Dev';
-$s['latestDevReleaseSub'] = 'Builds piuttosto inaffidabili con le ultime novità.<br>Ideale per utenti particolarmente tecnici.';
+$s['latestDevReleaseSub'] = 'Builds piuttosto inaffidabili con le ultime novità. Ideale per utenti particolarmente tecnici.';
 $s['latestBetaRelease'] = 'Ultima build Canale Beta';
-$s['latestBetaReleaseSub'] = 'Builds affidabili con la maggior parte delle funzionalità imminenti disponibili.<br>Ideale per i primi adottanti.';
+$s['latestBetaReleaseSub'] = 'Builds affidabili con la maggior parte delle funzionalità imminenti disponibili. Ideale per i primi adottanti.';
 $s['latestRPRelease'] = 'Ultima build Anteprima Release';
-$s['latestRPReleaseSub'] = 'Builds affidabili di anteprima del prossimo rilascio.<br>Ideale per provare i rilasci imminenti.';
+$s['latestRPReleaseSub'] = 'Builds affidabili di anteprima del prossimo rilascio. Ideale per provare i rilasci imminenti.';
 $s['advOptions'] = 'Opzioni avanzate';
 $s['browseBuilds'] = 'Sfoglia la lista delle build conosciute';
 $s['browseBuildsSub'] = 'Scegli una build che è già nota nel database locale e scaricala.';

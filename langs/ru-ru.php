@@ -57,6 +57,7 @@ $s['uupDumpDesc'] = 'UUP dump позволяет скачивать файлы �
 $s['uupDumpDescSub'] = '%s на UUP dump. UUP dump позволяет скачивать файлы платформы унифицированных обновлений, например обновления Windows Insider, непосредственно из Центра обновления Windows.'; //Select language for Windows 11 Insider Preview 25188.1000 (rs_prerelease) amd64 on UUP dump. UUP dump lets you download Unified Update Platform files, like Windows Insider updates, directly from Windows Update.
 
 //index.php
+$s['maintenanceNotice'] = 'Плановое обслуживание: %1$s – %2$s'; //Planned maintenance: Sep 9, 2026, 8:00 PM – Sep 10, 2026, 12:00 AM
 $s['slogan'] = 'С лёгкостью скачивайте UUP-файлы с серверов обновления Windows.';
 $s['quickOptions'] = 'Быстрые параметры';
 $s['tHeadReleaseType'] = 'Тип выпуска';
@@ -65,11 +66,11 @@ $s['tHeadArchitectures'] = 'Архитектуры';
 $s['latestPublicRelease'] = 'Последняя сборка публичного выпуска';
 $s['latestPublicReleaseSub'] = 'Последняя обновлённая сборка для обычных пользователей.';
 $s['latestDevRelease'] = 'Последняя сборка канала разработчика';
-$s['latestDevReleaseSub'] = 'Несколько ненадёжные сборки с новейшими функциями.<br>Идеально подходит для высокотехничных пользователей.';
+$s['latestDevReleaseSub'] = 'Несколько ненадёжные сборки с новейшими функциями. Идеально подходит для высокотехничных пользователей.';
 $s['latestBetaRelease'] = 'Последняя сборка бета-канала';
-$s['latestBetaReleaseSub'] = 'Надёжные сборки с большинством новых функций.<br>Идеально подходит для ранних последователей.';
+$s['latestBetaReleaseSub'] = 'Надёжные сборки с большинством новых функций. Идеально подходит для ранних последователей.';
 $s['latestRPRelease'] = 'Последняя сборка предварительного выпуска';
-$s['latestRPReleaseSub'] = 'Надёжные сборки для предпросмотра следующего выпуска.<br>Идеально подходит для опробования предстоящих релизов.';
+$s['latestRPReleaseSub'] = 'Надёжные сборки для предпросмотра следующего выпуска. Идеально подходит для опробования предстоящих релизов.';
 $s['advOptions'] = 'Дополнительные параметры';
 $s['browseBuilds'] = 'Посмотреть известные сбороки';
 $s['browseBuildsSub'] = 'Выберите уже обнаруженную сборку и скачайте её.';

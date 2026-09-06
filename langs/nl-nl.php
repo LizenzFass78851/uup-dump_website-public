@@ -52,6 +52,7 @@ $s['copyright'] = '© %d %s en bijdragers.'; //© 2019 whatever127 en bijdragers
 $s['selectLanguage'] = 'Selecteer de gewenste taal';
 
 //index.php
+$s['maintenanceNotice'] = 'Gepland onderhoud: %1$s – %2$s'; //Planned maintenance: Sep 9, 2026, 8:00 PM – Sep 10, 2026, 12:00 AM
 $s['slogan'] = 'Download makkelijk UUP bestanden, direct van de Windows update servers.';
 $s['quickOptions'] = 'Snelle opties';
 $s['tHeadReleaseType'] = 'Type release';
@@ -60,11 +61,11 @@ $s['tHeadArchitectures'] = 'Architecturen';
 $s['latestPublicRelease'] = 'Laatste Publieke Release build';
 $s['latestPublicReleaseSub'] = 'Meest recente uptodate builds voor reguliere gebruikers.';
 $s['latestDevRelease'] = 'Laatste Dev Channel build';
-$s['latestDevReleaseSub'] = 'Enigszins onbetrouwbare builds met de nieuwste functies.<br>Ideaal voor zeer technische gebruikers.';
+$s['latestDevReleaseSub'] = 'Enigszins onbetrouwbare builds met de nieuwste functies. Ideaal voor zeer technische gebruikers.';
 $s['latestBetaRelease'] = 'Laatste Beta Channel build';
-$s['latestBetaReleaseSub'] = 'Betrouwbare builds met de meeste aankomende functies die beschikbaar zijn.<br>Ideaal voor vroege gebruikers.';
+$s['latestBetaReleaseSub'] = 'Betrouwbare builds met de meeste aankomende functies die beschikbaar zijn. Ideaal voor vroege gebruikers.';
 $s['latestRPRelease'] = 'Laatste Release Preview build';
-$s['latestRPReleaseSub'] = 'Betrouwbare builds voor previewing de volgende release.<br>Ideaal om de volgende release the testen.';
+$s['latestRPReleaseSub'] = 'Betrouwbare builds voor previewing de volgende release. Ideaal om de volgende release the testen.';
 $s['advOptions'] = 'Geavanceerde Opties';
 $s['browseBuilds'] = 'Blader door de volledige versie lijst.';
 $s['browseBuildsSub'] = 'Selecteer een versie, die al in de lokale database aanwezig is, en download de geselecteerde versie.';

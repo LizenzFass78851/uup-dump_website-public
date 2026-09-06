@@ -53,6 +53,7 @@ $s['copyright'] = '© %d %s y colaboradores.'; //© 2019 whatever127 y colaborad
 $s['selectLanguage'] = 'Por favor, selecciona tu idioma';
 
 //index.php
+$s['maintenanceNotice'] = 'Mantenimiento programado: %1$s – %2$s'; //Planned maintenance: Sep 9, 2026, 8:00 PM – Sep 10, 2026, 12:00 AM
 $s['slogan'] = 'Descarga con facilidad archivos UUP desde los servidores de Windows Update.';
 $s['quickOptions'] = 'Atajos';
 $s['tHeadReleaseType'] = 'Tipo de versión';
@@ -61,11 +62,11 @@ $s['tHeadArchitectures'] = 'Arquitecturas';
 $s['latestPublicRelease'] = 'Compilación más reciente de la versión pública';
 $s['latestPublicReleaseSub'] = 'Compilación actualizada más reciente para usuarios normales.';
 $s['latestDevRelease'] = 'Compilación más reciente del Canal de Desarrollador';
-$s['latestDevReleaseSub'] = 'Compilaciones poco confiables con las funcionalidades más recientes.<br>Ideal para usuarios sumamente técnicos.';
+$s['latestDevReleaseSub'] = 'Compilaciones poco confiables con las funcionalidades más recientes. Ideal para usuarios sumamente técnicos.';
 $s['latestBetaRelease'] = 'Compilación más reciente del Canal Beta';
-$s['latestBetaReleaseSub'] = 'Compilaciones confiables con la mayoría de las funcionalidades futuras disponibles.<br>Ideal para pioneros.';
+$s['latestBetaReleaseSub'] = 'Compilaciones confiables con la mayoría de las funcionalidades futuras disponibles. Ideal para pioneros.';
 $s['latestRPRelease'] = 'Compilación más reciente de la versión del Release Preview';
-$s['latestRPReleaseSub'] = 'Compilaciones confiables para previsualizar la próxima versión.<br>Ideal para probar versiones futuras.';
+$s['latestRPReleaseSub'] = 'Compilaciones confiables para previsualizar la próxima versión. Ideal para probar versiones futuras.';
 $s['advOptions'] = 'Opciones avanzadas';
 $s['browseBuilds'] = 'Examinar las compilaciones conocidas';
 $s['browseBuildsSub'] = 'Escoge y descarga una compilación ya conocida.';

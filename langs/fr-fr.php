@@ -53,6 +53,7 @@ $s['copyright'] = '© %d %s et contributeurs.'; //© 2019 whatever127 et contrib
 $s['selectLanguage'] = 'S\'il vous plaît sélectionnez votre langue';
 
 //index.php
+$s['maintenanceNotice'] = 'Maintenance planifiée : %1$s – %2$s'; //Planned maintenance: Sep 9, 2026, 8:00 PM – Sep 10, 2026, 12:00 AM
 $s['slogan'] = 'Télécharger les fichiers UUP à partir des serveurs Windows Update avec facilité.';
 $s['advOptions'] = 'Options avancées';
 $s['browseBuilds'] = 'Parcourir la liste des builds connus';

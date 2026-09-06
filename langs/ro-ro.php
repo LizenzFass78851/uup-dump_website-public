@@ -53,6 +53,7 @@ $s['copyright'] = '© %d %s și contribuitorii.'; //© 2019 whatever127 și cont
 $s['selectLanguage'] = 'Alegeți limba dorită';
 
 //index.php
+$s['maintenanceNotice'] = 'Mentenanță planificată: %1$s – %2$s'; //Planned maintenance: Sep 9, 2026, 8:00 PM – Sep 10, 2026, 12:00 AM
 $s['slogan'] = 'Descărcați fișiere UUP cu ușurință de la serverele Windows Update.';
 $s['quickOptions'] = 'Opțiuni rapide';
 $s['tHeadReleaseType'] = 'Categorie de lansare';
@@ -61,11 +62,11 @@ $s['tHeadArchitectures'] = 'Arhitectură';
 $s['latestPublicRelease'] = 'Ultima compilare lansată public';
 $s['latestPublicReleaseSub'] = 'Compilare actualizată recent pentru utilizatori obișnuiți.';
 $s['latestDevRelease'] = 'Ultima compilare Dev Channel';
-$s['latestDevReleaseSub'] = 'Compilări oarecum nesigure cu caracteristici recente.<br>Ideal pentru utilizatori foarte tehnici.';
+$s['latestDevReleaseSub'] = 'Compilări oarecum nesigure cu caracteristici recente. Ideal pentru utilizatori foarte tehnici.';
 $s['latestBetaRelease'] = 'Ultima compilare Beta Channel';
-$s['latestBetaReleaseSub'] = 'Compilări de încredere cu mai multe caracteristici disponibile în curând.<br>Ideal pentru adoptatori timpurii.';
+$s['latestBetaReleaseSub'] = 'Compilări de încredere cu mai multe caracteristici disponibile în curând. Ideal pentru adoptatori timpurii.';
 $s['latestRPRelease'] = 'Ultima compilare Release Preview';
-$s['latestRPReleaseSub'] = 'Compilări de încredere pentru previzualizarea următoarei lansări.<br>Ideal pentru a încerca lansările ce vor fi disponibile în curând.';
+$s['latestRPReleaseSub'] = 'Compilări de încredere pentru previzualizarea următoarei lansări. Ideal pentru a încerca lansările ce vor fi disponibile în curând.';
 $s['advOptions'] = 'Opțiuni avansate';
 $s['browseBuilds'] = 'Răsfoiți compilările cunoscute';
 $s['browseBuildsSub'] = 'Alegeți o compilare deja descoperită și descărcați.';
