@@ -19,7 +19,6 @@ $s['uupdumpSub'] = '%s - UUP dump'; //Browse known builds - UUP dump
 $s['build'] = 'الإصدار';
 $s['arch'] = 'النواة';
 $s['ring'] = 'القناة';
-$s['branch'] = 'الرتبة';
 $s['updateid'] = 'رمز التعريف';
 $s['update'] = 'اسم الإصدار';
 $s['lang'] = 'اللغة';
@@ -72,9 +71,9 @@ $s['tHeadArchitectures'] = 'النواة المرغوبة';
 $s['latestPublicRelease'] = 'Public أحدث إصدار رسمي';
 $s['latestPublicReleaseSub'] = 'الإصدارات والتحديثات الرسمية للمستخدم العادي';
 $s['latestDevRelease'] = 'Dev أحدث إصدار من قناة';
-$s['latestDevReleaseSub'] = 'إصدارات قناة التطوير توفر ميزات متقدمة غير راسخة وأفكار جديدة. يناسب المستخدم المتقدم والمطورين';
+$s['latestDevReleaseSub'] = 'إصدارات قناة التطوير توفر ميزات متقدمة غير راسخة وأفكار جديدة<br>يناسب المستخدم المتقدم والمطورين';
 $s['latestBetaRelease'] = 'Beta أحدث إصدار من قناة';
-$s['latestBetaReleaseSub'] = 'إصدارات قناة التجريب تحتوي ميزات جديدة أكثر موثوقية. يناسب المستخدم المتحمس';
+$s['latestBetaReleaseSub'] = 'إصدارات قناة التجريب تحتوي ميزات جديدة أكثر موثوقية<br>يناسب المستخدم المتحمس';
 $s['latestRPRelease'] = 'Preview أحدث إصدار من قناة';
 $s['latestRPReleaseSub'] = 'معاينة الإصدارات الرسمية قبل طرحها للعموم مع الميزات المعتمدة';
 $s['advOptions'] = 'خيارات متقدمة';
@@ -85,7 +84,7 @@ $s['fetchLatestSub'] = 'Windows Update البحث عن معلومات أحدث �
 $s['newlyAdded'] = 'الإصدارات المضافة حديثاً';
 $s['dateAdded'] = 'تاريخ الإضافة';
 $s['latestCanaryRelease'] = 'Canary أحدث إصدار من قناة';
-$s['latestCanaryReleaseSub'] = 'إصدارات قناة البناء الخام تقدم آخر التغيرات على نظام ويندوز مع ميزات غير مكتملة أو مستقرة كلياً. يناسب المستخدم ذو المستوى العالي من التقنية';
+$s['latestCanaryReleaseSub'] = 'إصدارات قناة البناء الخام تقدم آخر التغيرات على نظام ويندوز مع ميزات غير مكتملة أو مستقرة كلياً<br>يناسب المستخدم ذو المستوى العالي من التقنية';
 $s['checkOutAddANewBuild'] = 'لم تعثر على الإصدار المرغوب؟ تفقد صفحة:   <i><a href="newbuild.php">اكتشاف الإصدارات</a></i>';
 
 //newbuild.php
@@ -97,8 +96,6 @@ $s['newBuildUsing'] = 'وظيفة هذه الصفحة';
 $s['newBuildUsingText'] = 'هذه الصفحة مخصصة للمستخدم المتقدم والذي يرغب بإضافة إصدارات غير متوفرة حالياً بالموقع. إذا أردت البحث باستخدام الخيارات الأكثر شيوعاً، استخدم الخيارات السريعة من الصفحة الرئيسية';
 $s['optionsNotice'] = 'تنبيه حول الخيارات';
 $s['optionsNoticeText'] = 'هذه الخيارات تحدد كيف يتم تكوين معلومات وكيل تحديث ويندوز التي ترسل لسيرفرات مايكروسوفت. من المهم تحديد الخيارات بدقة للحصول على نتائج';
-$s['autoSelect'] = 'اختيار تلقائي';
-$s['thisOnly'] = 'إيجاد رقم الإصدار المحدد فقط';
 
 //known.php
 $s['browseKnown'] = 'الإصدارات المعروفة';
@@ -334,7 +331,6 @@ $s['edition_LITE'] = 'Windows 10X';
 $s['edition_PPIPRO'] = 'Windows Team';
 $s['edition_PROFESSIONAL'] = 'Windows Pro';
 $s['edition_PROFESSIONALN'] = 'Windows Pro N';
-$s['edition_PROFESSIONALCOUNTRYSPECIFIC'] = 'Windows Pro China Only';
 $s['edition_PROFESSIONALWORKSTATION'] = 'Windows Pro لمحطات العمل';
 $s['edition_PROFESSIONALWORKSTATIONN'] = 'Windows Pro N لمحطات العمل';
 $s['edition_PROFESSIONALEDUCATION'] = 'Windows Pro لعملاء التعليم';
@@ -348,7 +344,5 @@ $s['edition_SERVERSTANDARD'] = 'Windows Server Standard';
 $s['edition_SERVERSTANDARDCORE'] = 'Windows Server Standard - بدون الواجهة الرسومية';
 $s['edition_SERVERTURBINE'] = 'Windows Server Datacenter: Azure Edition';
 $s['edition_SERVERTURBINECOR'] = 'Windows Server Datacenter: Azure Edition - بدون الواجهة الرسومية';
-$s['edition_SERVERTURBINECORE'] = 'Windows Server Datacenter: Azure Edition - بدون الواجهة الرسومية';
 $s['edition_SERVERSTANDARDACOR'] = 'Windows Server Standard - القناة نصف السنوية';
 $s['edition_SERVERDATACENTERACOR'] = 'Windows Server Datacenter - القناة نصف السنوية';
-$s['edition_WNC'] = 'Windows WNC';

@@ -19,7 +19,6 @@ $s['uupdumpSub'] = '%s - UUP dump'; //Browse known builds - UUP dump
 $s['build'] = 'ビルド';
 $s['arch'] = 'アーキテクチャ';
 $s['ring'] = 'チャネル';
-$s['branch'] = 'ブランチ';
 $s['updateid'] = '更新 ID';
 $s['update'] = '更新';
 $s['lang'] = '言語';
@@ -72,11 +71,11 @@ $s['tHeadArchitectures'] = 'アーキテクチャ';
 $s['latestPublicRelease'] = '最新の公開ビルド';
 $s['latestPublicReleaseSub'] = '一般的なユーザー向けに更新された最新ビルドです。';
 $s['latestDevRelease'] = '最新のDev チャネル';
-$s['latestDevReleaseSub'] = '新しいアイデアやリードタイムの長い機能については、信頼性の低いビルド。非常に専門的なユーザーに最適です。';
+$s['latestDevReleaseSub'] = '新しいアイデアやリードタイムの長い機能については、信頼性の低いビルド。<br>非常に専門的なユーザーに最適です。';
 $s['latestBetaRelease'] = '最新のベータチャネル';
-$s['latestBetaReleaseSub'] = '今後提供されるほとんどの機能を備えたDev チャネルより信頼性の高いビルド。早期導入者に最適です。';
+$s['latestBetaReleaseSub'] = '今後提供されるほとんどの機能を備えたDev チャネルより信頼性の高いビルド。<br>早期導入者に最適です。';
 $s['latestRPRelease'] = '最新のリリースプレビューチャネル';
-$s['latestRPReleaseSub'] = '次のリリースをプレビューするための信頼性の高いビルド。今後のリリースを試すのに最適です。';
+$s['latestRPReleaseSub'] = '次のリリースをプレビューするための信頼性の高いビルド。<br>今後のリリースを試すのに最適です。';
 $s['advOptions'] = '詳細オプション';
 $s['browseBuilds'] = '既知のビルドを参照';
 $s['browseBuildsSub'] = 'すでに検出されたビルドを選択してダウンロードします。';
@@ -85,7 +84,7 @@ $s['fetchLatestSub'] = 'Windows Updateサーバから最新のビルド情報を
 $s['newlyAdded'] = '最近追加されたビルド';
 $s['dateAdded'] = '追加された日付';
 $s['latestCanaryRelease'] = '最新のCanary チャネル';
-$s['latestCanaryReleaseSub'] = '最新のプラットフォームの変更と初期の機能を含む、不安定なビルド。上級ユーザーに最適です。';
+$s['latestCanaryReleaseSub'] = '最新のプラットフォームの変更と初期の機能を含む、不安定なビルド。<br>上級ユーザーに最適です。';
 $s['checkOutAddANewBuild'] = '目的のオプションがない場合は、<i><a href="newbuild.php">新しいビルドを追加</a></i>ページをご覧ください。';
 
 //newbuild.php
@@ -97,8 +96,6 @@ $s['newBuildUsing'] = 'このページの使い方';
 $s['newBuildUsingText'] = 'このページは、ウェブサイトにないビルドを追加したい上級ユーザー向けのものです。 最もよく使われるパラメータを使いたい場合は、ホームページにある<i>クイックオプション</i>を使用してください。';
 $s['optionsNotice'] = 'オプションのお知らせ';
 $s['optionsNoticeText'] = 'ここにあるオプションは、基礎となるWindows UpdateクライアントがMicrosoftサーバーにどのように報告するかを設定します。 正しく設定しないとエラーになります。';
-$s['autoSelect'] = '自動選択';
-$s['thisOnly'] = '選択されたビルドのみを検索';
 
 //known.php
 $s['browseKnown'] = '既知のビルドを参照';
@@ -249,7 +246,7 @@ $s['error_RATE_LIMITED'] = 'レート制限が課せられています。数秒�
 $s['error_UNSPECIFIED_VE'] = '追加のエディションを選択していません。追加のエディションを作成したくない場合は <i>aria2を使用してダウンロード後に変換</i> のオプションを使用してください。';
 $s['error_VE_UNAVAILABLE'] = '指定した項目では、追加エディションはサポートされていません。';
 $s['error_INVALID_PAGE'] = '指定されたページが無効';
-$s['error_WU_REQUEST_FAILED'] = 'Windows Updateサービスへのリクエストが失敗になりました。';
+$s['error_WU_REQUEST_FAILED'] = 'Windows Updateサービスへのリクエストが失敗になるました。';
 $s['errorNoMessage'] = 'エラーメッセージは利用できません.';
 
 //Languages
@@ -334,7 +331,6 @@ $s['edition_LITE'] = 'Windows 10X';
 $s['edition_PPIPRO'] = 'Windows Team';
 $s['edition_PROFESSIONAL'] = 'Windows Pro';
 $s['edition_PROFESSIONALN'] = 'Windows Pro N';
-$s['edition_PROFESSIONALCOUNTRYSPECIFIC'] = 'Windows Pro China Only';
 $s['edition_PROFESSIONALWORKSTATION'] = 'Windows Pro for Workstations';
 $s['edition_PROFESSIONALWORKSTATIONN'] = 'Windows Pro N for Workstations';
 $s['edition_PROFESSIONALEDUCATION'] = 'Windows Pro Education';
@@ -348,7 +344,5 @@ $s['edition_SERVERSTANDARD'] = 'Windows Server Standard';
 $s['edition_SERVERSTANDARDCORE'] = 'Windows Server Standard (Core)';
 $s['edition_SERVERTURBINE'] = 'Windows Server Datacenter: Azure Edition';
 $s['edition_SERVERTURBINECOR'] = 'Windows Server Datacenter: Azure Edition (Core)';
-$s['edition_SERVERTURBINECORE'] = 'Windows Server Datacenter: Azure Edition (Core)';
 $s['edition_SERVERSTANDARDACOR'] = 'Windows Server Standard (Semi-Annual Channel)';
 $s['edition_SERVERDATACENTERACOR'] = 'Windows Server Datacenter (Semi-Annual Channel)';
-$s['edition_WNC'] = 'Windows WNC';
