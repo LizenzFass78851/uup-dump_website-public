@@ -1,0 +1,62 @@
+name: Update Tagged Versions
+
+on:
+  schedule:
+    - cron: '0 3 * * *' # daily at 03:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-slim
+    if: github.repository == 'LizenzFass78851/uup-dump_website-public'
+    env:           
+      GIT_USER: github-actions[bot]
+      GIT_EMAIL: github-actions[bot]@users.noreply.github.com
+
+    steps:
+      - name: clone
+        uses: actions/checkout@main
+        with:
+          clean: false
+
+      - name: update uup-converter-wimlib
+        id: update_uup_converter
+        env:
+          REPO: "abbodi1406/WHD"
+          LOCAL_PATH: "${{ github.workspace }}/autodl_files/uup-converter-wimlib.7z"
+        run: |
+          set -e
+
+          FILES_JSON="$(curl -fsSL "https://api.github.com/repos/${REPO}/contents/scripts?ref=master")"
+          LATEST_FILE="$(printf '%s\n' "$FILES_JSON" | jq -r '.[] | select(.name | test("^uup-converter-wimlib-.*\\.7z$")) | .name' | sort -V | tail -n1)"
+          [ -n "$LATEST_FILE" ] || { echo "::error::No compatible uup-converter-wimlib archive found in ${REPO}/scripts"; exit 1; }
+
+          DOWNLOAD_URL="$(printf '%s\n' "$FILES_JSON" | jq -r --arg name "$LATEST_FILE" '.[] | select(.name == $name) | .download_url')"
+          [ -n "$DOWNLOAD_URL" ] || { echo "::error::Failed to resolve download URL for ${LATEST_FILE}"; exit 1; }
+
+          LATEST_COMMIT_SHA="$(curl -fsSL "https://api.github.com/repos/${REPO}/commits?path=scripts/${LATEST_FILE}&sha=master&per_page=1" | jq -r '.[0].sha')"
+          [ -n "$LATEST_COMMIT_SHA" ] && [ "$LATEST_COMMIT_SHA" != "null" ] || { echo "::error::Failed to determine latest upstream commit for ${LATEST_FILE}"; exit 1; }
+
+          echo "UPSTREAM_FILE: $LATEST_FILE"
+          echo "UPSTREAM_COMMIT: $LATEST_COMMIT_SHA"
+
+          mkdir -p "$(dirname "$LOCAL_PATH")"
+          curl -fsSL "$DOWNLOAD_URL" -o "$LOCAL_PATH"
+
+          git add autodl_files/uup-converter-wimlib.7z
+          git status
+          git config --local user.name ${{ env.GIT_USER }}
+          git config --local user.email ${{ env.GIT_EMAIL }}
+          if ! git diff --cached --quiet; then
+            git commit -m "Update uup-converter-wimlib.7z" -m "Source: ${REPO}@${LATEST_COMMIT_SHA}"
+            echo "updated=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --local credential.helper '!x() { echo "password=$GITHUB_TOKEN"; };x'
+          git push origin $GITHUB_REF_NAME
