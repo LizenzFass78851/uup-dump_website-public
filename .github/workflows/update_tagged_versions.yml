@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: clone
         uses: actions/checkout@main
-        with:
-          clean: false
 
       - name: update uup-converter-wimlib
         id: update_uup_converter
