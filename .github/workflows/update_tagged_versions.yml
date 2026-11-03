@@ -23,16 +23,21 @@ jobs:
           REPO: "abbodi1406/WHD"
           LOCAL_PATH: "${{ github.workspace }}/autodl_files/uup-converter-wimlib.7z"
         run: |
-          set -e
+          set -euo pipefail
 
-          FILES_JSON="$(curl -fsSL "https://api.github.com/repos/${REPO}/contents/scripts?ref=master")"
-          LATEST_FILE="$(printf '%s\n' "$FILES_JSON" | jq -r '.[] | select(.name | test("^uup-converter-wimlib-[0-9]+[a-z]*\\.7z$")) | .name' | sed -E 's#uup-converter-wimlib-([0-9]+)([a-z]*)\.7z#\1 \2 & #' | sort -k1,1n -k2,2 | awk '{print $3}' | tail -n1)"
+          FILES_JSON="$(curl -fsSL --retry 3 "https://api.github.com/repos/${REPO}/contents/scripts?ref=master")"
+          LATEST_FILE="$(printf '%s\n' "$FILES_JSON" \
+            | jq -r '[.[]? | select(.name | test("^uup-converter-wimlib-[0-9]+[a-z]*\\.7z$")) | {
+                name,
+                num: ((.name | capture("^uup-converter-wimlib-(?<num>[0-9]+)(?<suffix>[a-z]*)\\.7z$").num) | tonumber),
+                suffix: (.name | capture("^uup-converter-wimlib-(?<num>[0-9]+)(?<suffix>[a-z]*)\\.7z$").suffix)
+              }] | sort_by([.num, (.suffix // "")]) | last | .name')"
           [ -n "$LATEST_FILE" ] || { echo "::error::No compatible uup-converter-wimlib archive found in ${REPO}/scripts"; exit 1; }
 
-          DOWNLOAD_URL="$(printf '%s\n' "$FILES_JSON" | jq -r --arg name "$LATEST_FILE" '.[] | select(.name == $name) | .download_url')"
+          DOWNLOAD_URL="$(printf '%s\n' "$FILES_JSON" | jq -r --arg name "$LATEST_FILE" '.[]? | select(.name == $name) | .download_url')"
           [ -n "$DOWNLOAD_URL" ] || { echo "::error::Failed to resolve download URL for ${LATEST_FILE}"; exit 1; }
 
-          LATEST_COMMIT_SHA="$(curl -fsSL "https://api.github.com/repos/${REPO}/commits?path=scripts/${LATEST_FILE}&sha=master&per_page=1" | jq -r '.[0].sha')"
+          LATEST_COMMIT_SHA="$(curl -fsSL --retry 3 "https://api.github.com/repos/${REPO}/commits?path=scripts/${LATEST_FILE}&sha=master&per_page=1" | jq -r '.[0].sha')"
           [ -n "$LATEST_COMMIT_SHA" ] && [ "$LATEST_COMMIT_SHA" != "null" ] || { echo "::error::Failed to determine latest upstream commit for ${LATEST_FILE}"; exit 1; }
 
           echo "UPSTREAM_FILE: $LATEST_FILE"
